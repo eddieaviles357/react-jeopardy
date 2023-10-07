@@ -1,0 +1,29 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.Play-btn {
+  display: block;
+  margin: 0 auto;
+
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 20px;
+  
+  background-color: #4545f3;
+  box-shadow: 5px 5px 10px #000;
+  transition: transform 100ms;
+  border: solid 1px rgb(0, 0, 0);
+
+  width: 150px;
+  height: 50px;
+}
+
+.Play-btn:hover {
+  background-color: #687bf8;
+  transform: scale(.95);
+}

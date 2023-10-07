@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { getCategoryIds } from './api/api';
+import Home from './components/home/Home';
+import { useState } from 'react'
+import JeopardyContext from './JeopardyContext'
 
 function App() {
+  const [categories, setCategories ] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <JeopardyContext.Provider value={{ categories, setCategories }}>
+      <Home />
+    </JeopardyContext.Provider>
   );
 }
 
