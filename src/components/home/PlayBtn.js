@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './home.css'
+import JeopardyContext from '../../JeopardyContext'
 
 const PlayBtn = () => {
+  const { startGame } = useContext( JeopardyContext )
+  
   return (
-    <button className='Play-btn btn'>Play</button>
+    <button 
+      onClick={startGame}
+      className='Play-btn btn'>
+      Play
+    </button>
   )
 }
 
