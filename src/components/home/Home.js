@@ -1,13 +1,22 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import JeopardyContext from '../../JeopardyContext'
 import Title from './Title'
 import PlayBtn from './PlayBtn'
+import Board from '../Board/Board'
 import './home.css'
 
 const Home = () => {
+  const { isPlaying } = useContext( JeopardyContext )
+
   return (
       <div className='Home'>
-        <Title />
-        <PlayBtn />
+        {
+          !isPlaying ? 
+          <>
+            <Title />
+            <PlayBtn />
+          </> : <Board />
+        }
       </div>
   )
 }
