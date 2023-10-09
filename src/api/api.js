@@ -33,7 +33,9 @@ export const getCategoryIds = async () => {
   // we only need the id
   const catIds = data.map( data => data.id );
   // sample 6 categories
-  return sampleSize( catIds, 6 )
+  const sampledSize = sampleSize( catIds, 6 )
+  console.log('API::sampledSize', sampledSize)
+  return sampledSize
 };
 
 export default {
