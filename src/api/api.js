@@ -1,9 +1,6 @@
 import axios from 'axios';
 import sampleSize from 'lodash.samplesize';
-
-const BASE_URL = 'http://jservice.io/api/';
-const NUM_CATEGORIES = 6;
-const NUM_CLUES = 5;
+import { BASE_URL, NUM_CLUES } from '../constants';
 
 const request = async (endpoint = '', data = { timeout: 10000 }, method = 'get') => {
   console.debug(
@@ -34,10 +31,36 @@ export const getCategoryIds = async () => {
   const catIds = data.map( data => data.id );
   // sample 6 categories
   const sampledSize = sampleSize( catIds, 6 )
-  console.log('API::sampledSize', sampledSize)
+  // console.log('API::getCategoryIDS', sampledSize)
   return sampledSize
 };
 
+export async function getCategory(catId) {
+  const options = { params: { id: catId } };
+  let { data: category } = await axios.get(`${BASE_URL}category`, options);
+  // choose random clue using lodash library
+  let clues = sampleSize( category.clues, NUM_CLUES ).map(
+    ( { question, answer } ) => ( { question, answer, showing: null } )
+  );
+  const { title } = category;
+  // console.log("API::getCategory", title, clues)
+  return { title, clues };
+}
+
+export async function setBoardData() {
+  // Array of category ids
+  const catIds = await getCategoryIds();
+  const categories = []
+
+  for (let catId of catIds) {
+    categories.push(await getCategory(catId));
+  }
+
+  return categories;
+  
+}
+
+
 export default {
-  getCategoryIds,
+  setBoardData,
 }
