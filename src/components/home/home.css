@@ -1,9 +1,18 @@
 .Home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
+  flex-direction: column;
+}
+
+.playing{
+  flex-direction: row;
+  align-items: inherit !important;
+}
+
+.Home,
+.playing {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
 }
 
 .Play-btn {
