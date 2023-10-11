@@ -1,23 +1,26 @@
-import { getCategoryIds } from './api/api';
+import { setBoardData } from './api/api';
 import Home from './components/home/Home';
 import { useState, useContext } from 'react'
 import JeopardyContext from './JeopardyContext'
 
 function App() {
-  const [ categories, setCategories ] = useState( [] )
+  const [ jpardyData, setJpardyData ] = useState( [] )
   const [ isPlaying, setIsPlaying ] = useState( false )
 
   const startGame = async () => {
-    const catIds = await getCategoryIds()
-    setCategories( prev => [ ...prev, ...catIds ] )
-    setIsPlaying( true )
+    const boardData = await setBoardData()
+
+    setJpardyData( boardData )
+    
+    setTimeout( () => { 
+      console.log('interval'); setIsPlaying( true ), 2000 
+    } )
   }
 
   return (
     <JeopardyContext.Provider value={{ 
-      categories, 
-      setCategories,
-      getCategoryIds,
+      jpardyData, 
+      setJpardyData,
       isPlaying,
       setIsPlaying,
       startGame

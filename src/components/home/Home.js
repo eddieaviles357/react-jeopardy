@@ -9,7 +9,7 @@ const Home = () => {
   const { isPlaying } = useContext( JeopardyContext )
 
   return (
-      <div className='Home'>
+      <div className={ !isPlaying ? 'Home' : 'playing'}>
         {
           !isPlaying ? 
           <>
