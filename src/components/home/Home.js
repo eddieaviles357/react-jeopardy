@@ -7,9 +7,10 @@ import './home.css'
 
 const Home = () => {
   const { isPlaying } = useContext( JeopardyContext )
+  const style = isPlaying ? 'playing' : 'Home'
 
   return (
-      <div className={ !isPlaying ? 'Home' : 'playing'}>
+      <div className={ style }>
         {
           !isPlaying ? 
           <>
