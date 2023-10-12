@@ -3,7 +3,7 @@ import './board.css'
 
 const Clue = ({ children }) => {
   return (
-    <div className='clue'>{children}</div>
+    <div className='Board-clue'>{children}</div>
   )
 }
 
