@@ -1,16 +1,16 @@
 .Home {
   flex-direction: column;
+  align-items: center;
 }
 
 .playing{
   flex-direction: row;
-  align-items: inherit !important;
+  align-items: normal;
 }
 
 .Home,
 .playing {
   display: flex;
-  align-items: center;
   justify-content: space-around;
   height: 100vh;
 }
@@ -35,4 +35,11 @@
 .Play-btn:hover {
   background-color: #687bf8;
   transform: scale(.95);
+}
+
+.main-title {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  padding: 10px;
 }
