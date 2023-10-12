@@ -1,8 +1,18 @@
 .category-header {
   font-size: 20px;
   background-color: yellow;
+
+  border: 2px solid black;
 }
 
-.clue {
-  
+.Board-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Board-clue {
+  background-color: pink;
+  border: 2px solid red;
+  width: calc(100vw / 6)
 }
