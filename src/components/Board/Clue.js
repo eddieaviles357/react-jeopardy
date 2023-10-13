@@ -1,9 +1,9 @@
 import React from 'react'
 import './board.css'
 
-const Clue = ({ children }) => {
+const Clue = ({ id, children }) => {
   return (
-    <div className='Board-clue'>{children}</div>
+    <div className='Board-clue' id={id}>{children}</div>
   )
 }
 
