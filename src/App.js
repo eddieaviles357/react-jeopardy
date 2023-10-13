@@ -12,9 +12,7 @@ function App() {
 
     setJpardyData( boardData )
     
-    setTimeout( () => { 
-      console.log('interval'); setIsPlaying( true ), 2000 
-    } )
+    setTimeout( () => setIsPlaying( true ), 2000 )
   }
 
   return (
