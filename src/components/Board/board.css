@@ -1,18 +1,24 @@
 .category-header {
   font-size: 20px;
+  text-align: center;
   background-color: yellow;
-
   border: 2px solid black;
 }
 
 .Board-column {
   display: flex;
-  flex-direction: column;
   height: 100%;
+  flex-direction: column;
 }
 
 .Board-clue {
+  min-height: 100px;
+  min-width: 200px;
+  height: calc(100vh / 5);
+  width: calc(100vw / 6);
+  
+  text-align: center;
+
   background-color: pink;
   border: 2px solid red;
-  width: calc(100vw / 6)
 }
