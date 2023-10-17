@@ -1,6 +1,6 @@
 import { setBoardData } from './api/api';
 import Home from './components/home/Home';
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import JeopardyContext from './JeopardyContext'
 
 function App() {
