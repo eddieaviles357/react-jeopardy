@@ -30,9 +30,9 @@ export const getCategoryIds = async () => {
   // we only need the id
   const catIds = data.map( data => data.id );
   // sample 6 categories
-  const sampledSize = sampleSize( catIds, 6 )
-  // console.log('API::getCategoryIDS', sampledSize)
-  return sampledSize
+  const sampledSize = sampleSize( catIds, 6 );
+  console.log('API::getCategoryIDS', sampledSize)
+  return sampledSize;
 };
 
 export async function getCategory(catId) {
@@ -43,22 +43,22 @@ export async function getCategory(catId) {
     ( { question, answer } ) => ( { question, answer, showing: null } )
   );
   const { title } = category;
-  // console.log("API::getCategory", title, clues)
   return { title, clues };
 }
 
 export async function setBoardData() {
   // Array of category ids
   const catIds = await getCategoryIds();
-  const categories = []
+  const categories = [];
 
   for (let catId of catIds) {
     categories.push(await getCategory(catId));
   }
 
   return categories;
-}
+
+};
 
 export default {
   setBoardData,
-}
+};
