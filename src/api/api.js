@@ -57,9 +57,7 @@ export async function setBoardData() {
   }
 
   return categories;
-  
 }
-
 
 export default {
   setBoardData,
