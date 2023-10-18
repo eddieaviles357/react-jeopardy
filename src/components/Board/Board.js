@@ -10,13 +10,8 @@ const Board = () => {
   // question, answer, showing
   const jpardyClues = ( cluesArr, idx1 ) => {
     // if api returns an empty array of clues use default values
-    if(cluesArr.length === 0) {
-      let numberOfClues = NUM_CLUES;
-
-      while(numberOfClues > 0) {
-        cluesArr.push( DEFAULT_CLUE )
-        numberOfClues--;
-      }
+    while(cluesArr.length < 5) {
+      cluesArr.push( DEFAULT_CLUE )
     }
 
     return (
