@@ -40,7 +40,7 @@ export async function getCategory(catId) {
   let { data: category } = await axios.get(`${BASE_URL}category`, options);
   // choose random clue using lodash library
   let clues = sampleSize( category.clues, NUM_CLUES ).map(
-    ( { question, answer } ) => ( { question, answer, showing: null } )
+    ( { question, answer, value } ) => ( { question, answer, value, showing: null } )
   );
   const { title } = category;
   return { title, clues };
