@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import JeopardyContext from '../../JeopardyContext'
 import CategoryHeader from './CategoryHeader'
 import Clue from './Clue'
-import { DEFAULT_CLUE, NUM_CLUES } from '../../constants'
+import { v4 as uuidv4 } from 'uuid';
+import { DEFAULT_CLUE } from '../../constants'
 
 const Board = () => {
   const { jpardyData } = useContext( JeopardyContext )
@@ -15,11 +16,15 @@ const Board = () => {
     }
 
     return (
-    cluesArr.map( (clue, idx2) => ( 
+    cluesArr.map( ({ question,answer,value,showing }, idx2) => ( 
       <Clue 
-        key={ new Date().getTime() + idx1 + idx2} 
+        key={ uuidv4()} 
         id={ `${idx1} - ${idx2}` }
-        >{ clue.question }</Clue> 
+        question={ question }
+        answer={ answer }
+        value={ value }
+        showing={ showing }
+        /> 
     ))
   )}
 
@@ -28,9 +33,9 @@ const Board = () => {
   return (
     <>
     {jpardyData.map( ({ title, clues }, idx1 ) => ( 
-        <div className='Board-column' key={ new Date().getTime() + idx1 }>
+        <div className='Board-column' key={ uuidv4() }>
           <CategoryHeader>{ title }</CategoryHeader> 
-          {jpardyClues(clues, idx1)}
+          { jpardyClues(clues, idx1) }
         </div>
       ))}
     </>
