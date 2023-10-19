@@ -6,5 +6,6 @@ export const BASE_URL = 'http://jservice.io/api/';
 export const DEFAULT_CLUE = {
   question: 'What do you call a depressed coffee', 
   answer: 'depresso',
+  value: '100',
   showing: null
 }
