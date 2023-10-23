@@ -4,9 +4,11 @@ import './home.css'
 
 const Title = () => {
   return (
+    <>
     <h1>
       <img src={logo} className="main-title" alt="Jeopardy" />
     </h1>
+    </>
   )
 }
 
