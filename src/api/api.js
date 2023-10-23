@@ -1,6 +1,6 @@
 import axios from 'axios';
 import sampleSize from 'lodash.samplesize';
-import { BASE_URL, NUM_CLUES } from '../constants';
+import { BASE_URL, NUM_CLUES, DEFAULT_CLUE } from '../constants';
 
 const request = async (endpoint = '', data = { timeout: 10000 }, method = 'get') => {
   console.debug(
@@ -24,6 +24,7 @@ const request = async (endpoint = '', data = { timeout: 10000 }, method = 'get')
 };
 
 export const getCategoryIds = async () => {
+  // id 21 is hunting wich does not have data
   // ask for 50 categories so we can pick random max is 100
   const { data } = await request( 'categories', { count: 50 } );
   // data => [ { id: 102, title: "movies", clues_count: 98 },... ]
@@ -40,8 +41,19 @@ export async function getCategory(catId) {
   let { data: category } = await axios.get(`${BASE_URL}category`, options);
   // choose random clue using lodash library
   let clues = sampleSize( category.clues, NUM_CLUES ).map(
-    ( { question, answer, value } ) => ( { question, answer, value, showing: null } )
-  );
+    ( { question, answer, value } ) => { 
+      // if any values are null return default values
+      if(!question) question = DEFAULT_CLUE.question
+      if(!answer) answer = DEFAULT_CLUE.answer
+      if(!value) value = DEFAULT_CLUE.value
+      return { 
+        question, 
+        answer, 
+        value, 
+        showing: null 
+      }});
+
+  console.log('API::CLUES', clues)
   const { title } = category;
   return { title, clues };
 }
