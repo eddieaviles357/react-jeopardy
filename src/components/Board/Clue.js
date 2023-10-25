@@ -13,6 +13,7 @@ const Clue = ({ id, question, answer, value, showing }) => {
     const clueIdx = +id[id.length - 1]
     console.log(categoryIdx, clueIdx)
   }
+
   
   const content = (isShowing === null) ? value : (isShowing === true) ? question : answer
 
@@ -21,7 +22,10 @@ const Clue = ({ id, question, answer, value, showing }) => {
       onClick={ clickHandler }
       className='Board-clue' 
       id={id}
-      >{ content }</div>
+      >
+      { content }
+      { isShowing && <div className='active'>{content}</div>}
+      </div>
   )
 }
 
