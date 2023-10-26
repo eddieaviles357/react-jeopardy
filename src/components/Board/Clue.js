@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import './board.css'
+import ActiveClue from './ActiveClue'
 
 const Clue = ({ id, question, answer, value, showing }) => {
   const [isShowing, setIsShowing] = useState(showing)
   
   
-  const clickHandler = (evt) => {
+  const expandClue = (evt) => {
     (isShowing === null) ? setIsShowing( true) : setIsShowing( false )
     const id = evt.target.id
     // extract index from clue
@@ -19,12 +20,12 @@ const Clue = ({ id, question, answer, value, showing }) => {
 
   return (
     <div 
-      onClick={ clickHandler }
+      onClick={ expandClue }
       className='Board-clue' 
       id={id}
       >
       { content }
-      { isShowing && <div className='active'>{content}</div>}
+      { isShowing && <ActiveClue content={content} answer={answer} expandClue={expandClue}/> }
       </div>
   )
 }
