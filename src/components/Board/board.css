@@ -50,3 +50,24 @@
   background-color: rgba(68, 31, 255, 0.745);
   z-index: 100;
 }
+
+.clue-choice-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.clue-choice-container:first-child {
+  color: green;
+}
+
+.clue-choice-container:last-child {
+  color: pink;
+}
+
+#go-back,
+#reveal-answer {
+  cursor: pointer;
+  text-decoration: underline;
+}
