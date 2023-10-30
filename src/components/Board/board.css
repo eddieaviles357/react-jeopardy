@@ -33,41 +33,65 @@
   border: 2px solid rgb(73, 58, 58);
 }
 
-.active {
+.Active {
   display: block;
   position: fixed;
-  align-items: center;
-  font-size: 30px;
-  justify-content: center;
   top: 50%;
   left: 50%; 
   width: 100vw;
   height: 100vh;
 
+  font-size: 30px;
+  padding: 10px;
+
   transform: translate(-50%, -50%);
 
-  border: 8px solid yellow;
+  border: 3px solid yellow;
+  /* border-radius: 10px; */
   background-color: rgba(68, 31, 255, 0.745);
   z-index: 100;
 }
 
-.clue-choice-container {
+.clue-choices-container {
+  padding: 10px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 10px;
-}
 
-.clue-choice-container:first-child {
-  color: green;
-}
-
-.clue-choice-container:last-child {
-  color: pink;
+  border-radius: 10px;
 }
 
 #go-back,
 #reveal-answer {
+  padding: 10px;
+
   cursor: pointer;
-  text-decoration: underline;
+
+  border-radius: 10px;
+  border: 1px solid black;
+
+  background-color: yellow;
+  color: blue;
+}
+
+.Active-content,
+.Active-revealed {
+  display: block;
+  text-align: center;
+}
+
+.Active-revealed {
+  font-size: 3.5rem;
+  color: yellow;
+}
+
+.Active hr {
+  margin: 20px 0;
+  height: 3px;
+
+  background-color: yellow;
+
+  border: 2px solid yellow;
+  border-radius: 10px;
+
 }
