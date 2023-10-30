@@ -1,32 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './board.css'
 
 const ActiveClue = ({ content, answer }) => {
+  const [isRevealed, setIsRevealed] = useState(false);
   
-  const activeClueClickHandler = (evt) => {
-    // avoids parents click events to trigger
+  const activeClueEventHandler = (evt) => {
+    // avoid all other events
     evt.stopPropagation()
+
+    // extract id
     const id = evt.target.id
+
+    // go back to our jeopardy board 
+    // or reveal the answer
     if(id === 'go-back') { 
       console.log('goback')
     }
     if(id === 'reveal-answer') {
-      console.log('reveal-answer')
+      setIsRevealed(true)
     }
   }
 
-  const revealAnswer = (evt) => {
-    evt.stopPropagation()
-    console.log('answer', answer)
-  }
-
   return (
-    <div className='active' onClick={activeClueClickHandler}>
-      <div className='clue-choice-container'>
+    <div className='Active' onClick={activeClueEventHandler}>
+      <div className='clue-choices-container'>
         <span id='go-back'>Go Back</span>
         <span id='reveal-answer'>Reveal Answer</span>
       </div>
-      { content }
+      <hr />
+      <span className='Active-content'>{ content }</span>
+      <span className='Active-revealed'>{ isRevealed && answer }</span>
     </div>
   )
 }
