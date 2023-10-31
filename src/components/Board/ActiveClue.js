@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './board.css'
 
-const ActiveClue = ({ content, answer }) => {
+const ActiveClue = ({ content, answer, setIsShowing }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   
   const activeClueEventHandler = (evt) => {
@@ -14,7 +14,8 @@ const ActiveClue = ({ content, answer }) => {
     // go back to our jeopardy board 
     // or reveal the answer
     if(id === 'go-back') { 
-      console.log('goback')
+      // got back to the board items
+      setIsShowing(false)
     }
     if(id === 'reveal-answer') {
       setIsRevealed(true)
@@ -28,8 +29,10 @@ const ActiveClue = ({ content, answer }) => {
         <span id='reveal-answer'>Reveal Answer</span>
       </div>
       <hr />
-      <span className='Active-content'>{ content }</span>
-      <span className='Active-revealed'>{ isRevealed && answer }</span>
+      <div className='Active-qa-container'>
+        <span className='Active-content'>{ content }</span>
+        <span className='Active-revealed'>{ isRevealed && answer }</span>
+      </div>
     </div>
   )
 }
