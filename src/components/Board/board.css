@@ -1,6 +1,7 @@
 .category-header {
   padding: 5px 0;
   font-size: 20px;
+  text-transform: capitalize;
   text-align: center;
   color: #441fff;;
 
@@ -28,6 +29,8 @@
   width: calc(100vw / 6);
   
   color: #fff;
+
+  font-size: 20px;
 
   background-color: #441fff;
   border: 1px solid #aaa;
