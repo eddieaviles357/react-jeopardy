@@ -25,7 +25,7 @@ const Clue = ({ id, question, answer, value, showing }) => {
       id={id}
       >
       { content }
-      { isShowing && <ActiveClue content={content} answer={answer} expandClue={expandClue}/> }
+      { isShowing && <ActiveClue content={content} answer={answer} setIsShowing={setIsShowing}/> }
       </div>
   )
 }
