@@ -53,6 +53,8 @@
   /* border-radius: 10px; */
   background-color: #441fff;
   z-index: 100;
+
+  overflow: auto;
 }
 
 .clue-choices-container {
