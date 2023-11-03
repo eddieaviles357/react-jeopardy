@@ -7,6 +7,7 @@ const Clue = ({ id, question, answer, value, showing }) => {
   
   
   const expandClue = (evt) => {
+    // console.log('evt', evt)
     (isShowing === null) ? setIsShowing( true) : setIsShowing( false )
     const id = evt.target.id
     // extract index from clue
