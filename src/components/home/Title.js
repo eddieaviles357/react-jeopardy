@@ -1,13 +1,12 @@
 import React from 'react'
 import logo from '../../Jeopardy-logo.svg'
 // import logo from '../../jeopardy.svg'
+import { motion } from 'framer-motion'
 import './home.css'
 
 const Title = () => {
   return (
-    <>
-      {/* <img src={logo} className="main-title" alt="Jeopardy" /> */}
-    <svg version="1.0" id="title" inkscapeversion="0.91 r13725" sodipodidocname="Jeopardy!.svg" xmlnscc="http://creativecommons.org/ns#" xmlnsdc="http://purl.org/dc/elements/1.1/" xmlnsinkscape="http://www.inkscape.org/namespaces/inkscape" xmlnsrdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlnssodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlnssvg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 282.6" enableBackground="new 0 0 1000 282.6" xmlSpace="preserve">
+    <motion.svg version="1.0" id="title" inkscapeversion="0.91 r13725" sodipodidocname="Jeopardy!.svg" xmlnscc="http://creativecommons.org/ns#" xmlnsdc="http://purl.org/dc/elements/1.1/" xmlnsinkscape="http://www.inkscape.org/namespaces/inkscape" xmlnsrdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlnssodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlnssvg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 282.6" enableBackground="new 0 0 1000 282.6" xmlSpace="preserve">
       <path className='title-svg' id="rect4359" inkscapeconnector-curvature="0" d="M68.5,0v242.6c0,4.1-3.4,7.4-7.6,7.4h-17c-4.2,0-7.6-3.3-7.6-7.4v-75H0
         v94.6c0,11.3,9.1,20.4,20.5,20.4h65c11.3,0,20.5-9.1,20.5-20.4V0C106,0,68.5,0,68.5,0z M160.2,0c-20.7,0-37.3,9.7-37.3,21.7V259
         c0,12,9.4,23.6,30.1,23.6h70.3V250H170c-5.4,0-9.7-4.3-9.7-9.7v-30.2c0-5.4,4.3-9.7,9.7-9.7h53.3v-32.2h-52.6
@@ -25,8 +24,7 @@ const Title = () => {
         h-26.6l4.4-47.7C521,117.1,524.3,115,528.1,115L528.1,115z M290.9,115.4h4.7c6,0,10.9,4.3,10.9,9.7v115.1c0,5.4-4.9,9.7-10.9,9.7
         h-4.7c-6,0-10.9-4.3-10.9-9.7V125.1C280,119.7,284.9,115.4,290.9,115.4z M399.1,116h21.5c4.2,0,7.6,4.4,7.6,9.8v32.7
         c0,5.4-3.4,9.8-7.6,9.8h-21.5C399.1,168.2,399.1,116,399.1,116z M966.5,209.7v31.8h33.5v-31.8H966.5z"/>
-    </svg>
-    </>
+    </motion.svg>
   )
 }
 
