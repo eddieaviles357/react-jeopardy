@@ -31,14 +31,14 @@ const Board = () => {
   console.log('Board.Component', jpardyData)
 
   return (
-    <>
+    <div className='Board'>
     {jpardyData.map( ({ title, clues }, idx1 ) => ( 
         <div className='Board-column' key={ uuidv4() }>
           <CategoryHeader>{ title }</CategoryHeader> 
           { jpardyClues(clues, idx1) }
         </div>
       ))}
-    </>
+    </div>
   )
 }
 
