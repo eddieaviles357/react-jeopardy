@@ -4,6 +4,7 @@ import Title from './Title'
 import PlayBtn from './PlayBtn'
 import Board from '../Board/Board'
 import './home.css'
+import { AnimatePresence } from 'framer-motion'
 
 const Home = () => {
   const { isPlaying } = useContext( JeopardyContext )
@@ -11,13 +12,14 @@ const Home = () => {
 
   return (
       <div className={ style }>
-        {
-          !isPlaying ? 
+        <AnimatePresence>
+        {!isPlaying ? 
           <>
             <Title />
             <PlayBtn />
           </> : <Board />
         }
+        </AnimatePresence>
       </div>
   )
 }
