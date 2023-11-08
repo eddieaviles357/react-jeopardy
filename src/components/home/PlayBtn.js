@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import './home.css'
 import JeopardyContext from '../../JeopardyContext'
+import Loading from '../common/Loading'
 import { motion } from 'framer-motion'
 
 const PlayBtn = () => {
-  const { startGame } = useContext( JeopardyContext )
+  const { startGame, isLoading } = useContext( JeopardyContext )
 
   const motionAttr = {
     hover: { 
@@ -24,15 +25,20 @@ const PlayBtn = () => {
   }
   
   return (
-    <motion.button layout
-      initial={motionAttr.initial}
-      whileHover={motionAttr.hover}
-      whileTap={motionAttr.tap}
-      animate={motionAttr.animate}
-      onClick={startGame}
-      className='Play-btn btn'>
-      Play
-    </motion.button>
+    <>
+    { isLoading ?
+        <Loading /> :
+        <motion.button layout
+          initial={motionAttr.initial}
+          whileHover={motionAttr.hover}
+          whileTap={motionAttr.tap}
+          animate={motionAttr.animate}
+          onClick={startGame}
+          className='Play-btn btn'>
+          Play
+        </motion.button> }
+
+    </>
   )
 }
 
