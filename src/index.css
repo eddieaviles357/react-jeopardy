@@ -27,3 +27,9 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.Loading {
+  font-size: 25px;
+  text-align: center;
+  color: yellow;
+}
