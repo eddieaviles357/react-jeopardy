@@ -6,17 +6,20 @@ import JeopardyContext from './JeopardyContext'
 function App() {
   const [ jpardyData, setJpardyData ] = useState( [] )
   const [ isPlaying, setIsPlaying ] = useState( false )
+  const [ isLoading, setIsLoading ] = useState( false )
   // used to avoid multiple calls to api
   const [ isPlayedBtnStarted, setisPlayedBtnStarted ] = useState( false )
 
   const startGame = async () => {
-    if(isPlayedBtnStarted) return;
-    setisPlayedBtnStarted( true );
-
+    if(isPlayedBtnStarted) return
+    setisPlayedBtnStarted( true )
+    setIsLoading( true )
     setJpardyData( await setBoardData() )
+    setIsPlaying( true )
+    setIsLoading( false )
     
     // wait 2 seconds so we can apply some animations
-    setTimeout( () => setIsPlaying( true ), 2000 )
+    // setTimeout( () => setIsPlaying( true ), 2000 )
   }
 
   return (
@@ -26,6 +29,7 @@ function App() {
       isPlaying,
       setIsPlaying,
       startGame,
+      isLoading,
       }}>
       <Home />
     </JeopardyContext.Provider>
