@@ -7,17 +7,16 @@ const PlayBtn = () => {
   const { startGame } = useContext( JeopardyContext )
 
   const motionAttr = {
-    initial: {        
-      // x: '-50%',
-      // y: '75%',
-      },
     hover: { 
       scale: 1.2, 
-      boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.1)' 
+      boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.1)',
+      backgroundColor: 'rgb(0, 0, 198)'
       },
     tap: { 
       scale: 1, 
-      backgroundColor: '#8585f0'
+      backgroundColor: 'yellow',
+      border: '3px solid blue',
+      color: 'blue',
       },
     animate: {
       boxShadow: "10px 10px 4px rgba(0, 0, 0, 0.2)",
