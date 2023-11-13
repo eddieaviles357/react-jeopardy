@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './board.css'
 import { motion } from 'framer-motion'
 
-const ActiveClue = ({ content, answer, title, setIsShowing }) => {
+const ActiveClue = ({ content, answer, title, setIsShowing, setIsAnswered }) => {
   const [isRevealed, setIsRevealed] = useState(false);
   
   const activeClueEventHandler = (evt) => {
@@ -20,6 +20,7 @@ const ActiveClue = ({ content, answer, title, setIsShowing }) => {
     }
     if(id === 'reveal-answer') {
       setIsRevealed(true)
+      setIsAnswered( true )
     }
   }
 
