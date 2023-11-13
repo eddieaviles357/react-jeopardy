@@ -11,12 +11,16 @@ function App() {
   const [ isPlayedBtnStarted, setisPlayedBtnStarted ] = useState( false )
 
   const startGame = async () => {
-    if(isPlayedBtnStarted) return
-    setisPlayedBtnStarted( true )
-    setIsLoading( true )
-    setJpardyData( await setBoardData() )
-    setIsPlaying( true )
-    setIsLoading( false )
+    try {
+      if(isPlayedBtnStarted) return
+      setisPlayedBtnStarted( true )
+      setIsLoading( true )
+      setJpardyData( await setBoardData() )
+      setIsPlaying( true )
+      setIsLoading( false )
+    } catch (err) {
+      return <div>Sorry something went wrong.Please Refresh</div>
+    }
     
     // wait 2 seconds so we can apply some animations
     // setTimeout( () => setIsPlaying( true ), 2000 )
