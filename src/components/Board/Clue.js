@@ -27,7 +27,13 @@ const Clue = ({ id, question, answer, value, showing }) => {
       id={id}
       >
       { content }
-      { isShowing && <ActiveClue content={content} answer={answer} setIsShowing={setIsShowing} setIsAnswered={setIsAnswered}/> }
+      { isShowing && 
+        <ActiveClue 
+          content={content} 
+          answer={answer} 
+          setIsShowing={setIsShowing} 
+          setIsAnswered={setIsAnswered} /> 
+          }
       </div>
   )
 }
