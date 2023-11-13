@@ -23,7 +23,7 @@ const Clue = ({ id, question, answer, value, showing }) => {
   return (
     <div 
       onClick={ expandClue }
-      className='Board-clue' 
+      className={`Board-clue ${isAnswered ? 'answered' : ''}`} 
       id={id}
       >
       { content }
