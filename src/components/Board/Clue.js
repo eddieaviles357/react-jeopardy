@@ -30,7 +30,7 @@ const Clue = ({ id, question, answer, value, showing }) => {
       { value }
       { isShowing && 
         <ActiveClue 
-          content={content} 
+          question={question} 
           answer={answer} 
           setIsAnswered={setIsAnswered} /> 
           }
