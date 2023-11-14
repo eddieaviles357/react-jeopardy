@@ -23,15 +23,15 @@ const Clue = ({ id, question, answer, value, showing }) => {
   return (
     <div 
       onClick={ expandClue }
+      disabled={ isAnswered ? true : false}
       className={`Board-clue ${isAnswered ? 'answered' : ''}`} 
       id={id}
       >
-      { content }
+      { value }
       { isShowing && 
         <ActiveClue 
           content={content} 
           answer={answer} 
-          setIsShowing={setIsShowing} 
           setIsAnswered={setIsAnswered} /> 
           }
       </div>
