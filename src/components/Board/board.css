@@ -39,7 +39,7 @@
   
   color: #fff;
 
-  font-size: 20px;
+  font-size: 2rem;
 
   background-color: #441fff;
   border: 1px solid #aaa;
@@ -116,5 +116,5 @@
 }
 
 .answered {
-  color: yellow;
+  color: gray;
 }
