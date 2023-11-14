@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import './board.css'
 import { motion } from 'framer-motion'
 
-const ActiveClue = ({ content, answer, title, setIsShowing, setIsAnswered }) => {
-  const [isRevealed, setIsRevealed] = useState(false);
+const ActiveClue = ({ content, answer, setIsAnswered }) => {
+  const [isRevealed, setIsRevealed] = useState(false)
+  const [isShowing, setIsShowing] = useState(true)
   
   const activeClueEventHandler = (evt) => {
     // avoid all other events
@@ -12,17 +13,18 @@ const ActiveClue = ({ content, answer, title, setIsShowing, setIsAnswered }) => 
     // extract id
     const id = evt.target.id
 
-    // go back to our jeopardy board 
-    // or reveal the answer
     if(id === 'go-back') { 
-      // got back to the board items
+      // go back to board
       setIsShowing(false)
     }
     if(id === 'reveal-answer') {
       setIsRevealed(true)
-      setIsAnswered( true )
+      setIsAnswered(true)
     }
   }
+
+  // go back to board
+  if(!isShowing) return
 
   return (
     <div className='Active' onClick={activeClueEventHandler}>
