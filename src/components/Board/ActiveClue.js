@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './board.css'
 import { motion } from 'framer-motion'
 
-const ActiveClue = ({ content, answer, setIsAnswered }) => {
+const ActiveClue = ({ question, answer, setIsAnswered }) => {
   const [isRevealed, setIsRevealed] = useState(false)
   const [isShowing, setIsShowing] = useState(true)
   
@@ -34,7 +34,7 @@ const ActiveClue = ({ content, answer, setIsAnswered }) => {
       </div>
       <hr />
       <div className='Active-qa-container'>
-        <span className='Active-content'>{ content }</span>
+        <span className='Active-content'>{ question }</span>
         <span className='Active-revealed'>{ isRevealed && answer }</span>
       </div>
     </div>
