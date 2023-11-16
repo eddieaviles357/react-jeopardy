@@ -7,17 +7,6 @@
   overflow: auto;
 }
 
-.category-header {
-  padding: 5px 0;
-  font-size: 20px;
-  text-transform: capitalize;
-  text-align: center;
-  color: #441fff;;
-
-  background-color: #ffff00;
-  /* border: 2px solid #ffffff; */
-}
-
 .Board-column {
   display: flex;
   height: 100%;
@@ -40,9 +29,21 @@
   color: #fff;
 
   font-size: 2rem;
+  font-weight: bold;
 
   background-color: #441fff;
   border: 1px solid #aaa;
+}
+
+.category-header {
+  padding: 5px 0;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: bold;
+  color: #441fff;;
+
+  background-color: #ffff00;
 }
 
 .Active {
@@ -92,6 +93,7 @@
 .Active-revealed {
   display: block;
   text-align: center;
+  font-weight: normal;
 }
 
 .Active-qa-container {
@@ -116,5 +118,6 @@
 }
 
 .answered {
-  color: gray;
+  color: yellow;
+  background-color: #0000ff;
 }
