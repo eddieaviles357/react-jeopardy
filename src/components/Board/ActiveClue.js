@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import './board.css'
-import { motion } from 'framer-motion'
 
-const ActiveClue = ({ question, answer, setIsAnswered }) => {
+const ActiveClue = ({ 
+  question, 
+  answer, 
+  isAnswered,
+  setIsAnswered, 
+  setIsShowing 
+}) => {
   const [isRevealed, setIsRevealed] = useState(false)
-  const [isShowing, setIsShowing] = useState(true)
   
   const activeClueEventHandler = (evt) => {
     // avoid all other events
@@ -23,9 +27,6 @@ const ActiveClue = ({ question, answer, setIsAnswered }) => {
     }
   }
 
-  // go back to board
-  if(!isShowing) return
-
   return (
     <div className='Active' onClick={activeClueEventHandler}>
       <div className='clue-choices-container'>
@@ -35,7 +36,7 @@ const ActiveClue = ({ question, answer, setIsAnswered }) => {
       <hr />
       <div className='Active-qa-container'>
         <span className='Active-content'>{ question }</span>
-        <span className='Active-revealed'>{ isRevealed && answer }</span>
+        <span className='Active-revealed'>{ (isRevealed || isAnswered) && answer }</span>
       </div>
     </div>
   )
