@@ -9,12 +9,13 @@
   font-size: 30px;
   padding: 10px;
 
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
 
   border: 3px solid #ffff00;
   /* border-radius: 10px; */
   background-color: #441fff;
   z-index: 100;
+  
 
   overflow: auto;
 }
@@ -48,8 +49,8 @@
 }
 
 .answered {
-  color: yellow;
-  background-color: #0000ff;
+  color: yellow !important;
+  background-color: #0000ff !important;
 }
 
 .Board {
@@ -87,6 +88,8 @@
 
   background-color: #441fff;
   border: 1px solid #aaa;
+
+  cursor: pointer;
 }
 
 .category-header {
