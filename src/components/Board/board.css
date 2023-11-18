@@ -1,3 +1,57 @@
+.Active {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 30px;
+  padding: 10px;
+
+  transform: translate(-50%, -50%);
+
+  border: 3px solid #ffff00;
+  /* border-radius: 10px; */
+  background-color: #441fff;
+  z-index: 100;
+
+  overflow: auto;
+}
+
+.Active-qa-container,
+.Active-revealed {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+}
+
+.Active-qa-container {
+  color: white;
+  padding: 15px 0 0 0;
+}
+
+.Active-revealed {
+  font-size: 3.5rem;
+  color: yellow;
+}
+
+.Active hr {
+  margin: 20px 0;
+  height: 3px;
+
+  background-color: #ffff00;
+
+  border: 2px solid #ffff00;
+  border-radius: 10px;
+
+}
+
+.answered {
+  color: yellow;
+  background-color: #0000ff;
+}
+
 .Board {
   flex-direction: row;
   align-items: normal;
@@ -46,26 +100,6 @@
   background-color: #ffff00;
 }
 
-.Active {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%; 
-  width: 100vw;
-  height: 100vh;
-
-  font-size: 30px;
-  padding: 10px;
-
-  transform: translate(-50%, -50%);
-
-  border: 3px solid #ffff00;
-  /* border-radius: 10px; */
-  background-color: #441fff;
-  z-index: 100;
-
-  overflow: auto;
-}
 
 .clue-choices-container {
   padding: 10px;
@@ -87,37 +121,4 @@
 
   background-color: #ffff00;
   color: #0000ff;
-}
-
-.Active-qa-container,
-.Active-revealed {
-  display: block;
-  text-align: center;
-  font-weight: normal;
-}
-
-.Active-qa-container {
-  color: white;
-  padding: 15px 0 0 0;
-}
-
-.Active-revealed {
-  font-size: 3.5rem;
-  color: yellow;
-}
-
-.Active hr {
-  margin: 20px 0;
-  height: 3px;
-
-  background-color: #ffff00;
-
-  border: 2px solid #ffff00;
-  border-radius: 10px;
-
-}
-
-.answered {
-  color: yellow;
-  background-color: #0000ff;
 }
