@@ -22,6 +22,7 @@ const ActiveClue = ({
       setIsShowing(false)
     }
     if(id === 'reveal-answer') {
+      // reveals answer and stays reveals indefinitely
       setIsRevealed(true)
       setIsAnswered(true)
     }
