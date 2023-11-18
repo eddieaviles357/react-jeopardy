@@ -21,9 +21,6 @@ function App() {
     } catch (err) {
       return <div>Sorry something went wrong.Please Refresh</div>
     }
-    
-    // wait 2 seconds so we can apply some animations
-    // setTimeout( () => setIsPlaying( true ), 2000 )
   }
 
   return (
