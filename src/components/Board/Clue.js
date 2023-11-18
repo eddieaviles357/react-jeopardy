@@ -8,20 +8,12 @@ const Clue = ({ id, question, answer, value, showing }) => {
   
   
   const expandClue = (evt) => {
-    // console.log('evt', evt)
     setIsShowing( prev => !prev )
-    console.log('isSHOWING', isShowing)
-    console.log('isANSWERED', isAnswered)
-    // (isShowing === null) ? setIsShowing( true) : setIsShowing( false )
     const id = evt.target.id
     // extract index from clue
     const categoryIdx = +id[0]
     const clueIdx = +id[id.length - 1]
-    console.log(categoryIdx, clueIdx)
   }
-
-  
-  // const content = (isShowing === null) ? value : (isShowing === true) ? question : answer
 
   return (
     <div 
