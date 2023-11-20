@@ -5,11 +5,10 @@ import ActiveClue from './ActiveClue'
 const Clue = ({ id, question, answer, value, showing }) => {
   const [isShowing, setIsShowing] = useState(false)
   const [isAnswered, setIsAnswered] = useState(false)
-  
-  
+
   const expandClue = (evt) => {
     setIsShowing( prev => !prev )
-    const id = evt.target.id
+    const id = evt.target
     // extract index from clue
     const categoryIdx = +id[0]
     const clueIdx = +id[id.length - 1]
@@ -27,7 +26,8 @@ const Clue = ({ id, question, answer, value, showing }) => {
           answer={answer} 
           isAnswered={isAnswered}
           setIsAnswered={setIsAnswered} 
-          setIsShowing={setIsShowing} /> }
+          setIsShowing={setIsShowing} 
+          /> }
       </div>
   )
 }
