@@ -7,9 +7,10 @@ const ActiveClue = ({
   answer, 
   isAnswered,
   setIsAnswered, 
-  setIsShowing 
+  setIsShowing,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false)
+
   const activeClueEventHandler = (evt) => {
     // avoid all other events
     evt.stopPropagation()
@@ -22,7 +23,7 @@ const ActiveClue = ({
       setIsShowing(false)
     }
     if(id === 'reveal-answer') {
-      // reveals answer and stays reveals indefinitely
+      // reveals answer and stays indefinitely
       setIsRevealed(true)
       setIsAnswered(true)
     }
@@ -32,19 +33,17 @@ const ActiveClue = ({
     hidden: { 
       x: '-50%',
       y: '-50%',
-      opacity: 0,
-      // transform: 'scale(0.1)' 
+      opacity: 1,
       scale: 0,
     },
     show: {
       x: '-50%',
       y: '-50%',
       opacity: 1,
-      // transform: 'scale(1)',
       scale: 1,
       transition: {
+        duration: .5,
         stiffness: 260,
-        type: "spring",
         staggerChildren: 0.5
       }
     }
