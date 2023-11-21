@@ -24,7 +24,6 @@ const Clue = ({ id, question, answer, value, showing }) => {
       <AnimatePresence>
         { isShowing && (
           <ActiveClue 
-            key={id}
             question={question} 
             answer={answer} 
             isAnswered={isAnswered}
