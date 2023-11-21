@@ -46,6 +46,9 @@ const ActiveClue = ({
         stiffness: 260,
         staggerChildren: 0.5
       }
+    },
+    exit: {
+      backgroundColor: 'green',
     }
   }
   
