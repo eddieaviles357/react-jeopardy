@@ -21,17 +21,18 @@ const Clue = ({ id, question, answer, value, showing }) => {
       className={`Board-clue ${isAnswered ? 'answered' : ''}`} 
       id={id} >
       { value }
-      { isShowing && 
-        <AnimatePresence>
+      <AnimatePresence>
+        { isShowing && (
           <ActiveClue 
+            key={id}
             question={question} 
             answer={answer} 
             isAnswered={isAnswered}
             setIsAnswered={setIsAnswered} 
             setIsShowing={setIsShowing} 
-            /> 
-        </AnimatePresence>
-          }
+          />
+        )}
+      </AnimatePresence>
       </div>
   )
 }
