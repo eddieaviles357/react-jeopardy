@@ -3,7 +3,7 @@ import './board.css'
 import ActiveClue from './ActiveClue'
 import { AnimatePresence } from 'framer-motion'
 
-const Clue = ({ id, question, answer, value, showing }) => {
+const Clue = ({ id, question, answer, value }) => {
   const [isShowing, setIsShowing] = useState(false)
   const [isAnswered, setIsAnswered] = useState(false)
 
