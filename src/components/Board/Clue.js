@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './board.css'
 import ActiveClue from './ActiveClue'
+import { AnimatePresence } from 'framer-motion'
 
 const Clue = ({ id, question, answer, value, showing }) => {
   const [isShowing, setIsShowing] = useState(false)
