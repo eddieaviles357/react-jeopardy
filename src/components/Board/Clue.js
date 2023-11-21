@@ -22,13 +22,16 @@ const Clue = ({ id, question, answer, value, showing }) => {
       id={id} >
       { value }
       { isShowing && 
-        <ActiveClue 
-          question={question} 
-          answer={answer} 
-          isAnswered={isAnswered}
-          setIsAnswered={setIsAnswered} 
-          setIsShowing={setIsShowing} 
-          /> }
+        <AnimatePresence>
+          <ActiveClue 
+            question={question} 
+            answer={answer} 
+            isAnswered={isAnswered}
+            setIsAnswered={setIsAnswered} 
+            setIsShowing={setIsShowing} 
+            /> 
+        </AnimatePresence>
+          }
       </div>
   )
 }
