@@ -29,7 +29,7 @@ const ActiveClue = ({
     }
   }
   
-  const container = {
+  const clueVariant = {
     hidden: { 
       x: '-50%',
       y: '-50%',
@@ -44,19 +44,25 @@ const ActiveClue = ({
       transition: {
         duration: .5,
         stiffness: 260,
-        staggerChildren: 0.5
       }
     },
-    exit: {
-      backgroundColor: 'green',
+    leaving: {
+      x: '-50%',
+      y: '-50%',
+      scale: 0,
+      opacity: 0,
+      transition: {
+      duration: .5,
+      }
     }
   }
   
   return (
     <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show" 
+      variants={clueVariant}
+      initial='hidden'
+      animate='show' 
+      exit='leaving'
       className='Active' 
       onClick={activeClueEventHandler} >
       <div className='clue-choices-container'>
