@@ -93,7 +93,7 @@
 }
 
 .Board-clue:hover {
-  background-color: #44affe;
+  border: 2px solid yellow;
 }
 
 .category-header {
