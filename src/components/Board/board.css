@@ -92,6 +92,10 @@
   cursor: pointer;
 }
 
+.Board-clue:hover {
+  background-color: #44affe;
+}
+
 .category-header {
   padding: 5px 0;
   font-size: 1.5rem;
