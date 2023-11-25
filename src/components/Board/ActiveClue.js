@@ -33,13 +33,11 @@ const ActiveClue = ({
     hidden: { 
       x: '-50%',
       y: '-50%',
-      opacity: 1,
       scale: 0,
     },
     show: {
       x: '-50%',
       y: '-50%',
-      opacity: 1,
       scale: 1,
       transition: {
         duration: .5,
@@ -50,7 +48,6 @@ const ActiveClue = ({
       x: '-50%',
       y: '-50%',
       scale: 0,
-      opacity: 0,
       transition: {
       duration: .5,
       }
