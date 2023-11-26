@@ -66,7 +66,7 @@ export async function setBoardData() {
   for (let catId of catIds) {
     categories.push(await getCategory(catId));
   }
-
+  console.log("CATEGORIES", categories)
   return categories;
 
 };
