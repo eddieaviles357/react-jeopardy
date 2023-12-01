@@ -18,4 +18,11 @@ describe('Component rendered test', () => {
     expect(btn.className).toBe('Play-btn btn')
   });
 
+  it('should render Title', () => {
+    render(<App />);
+    const title = screen.getByText(/Jeopardy/i);
+    expect(title.textContent).toBe('Jeopardy');
+    expect(title.id).toBe('jeopardy-title');
+  })
+
 })
