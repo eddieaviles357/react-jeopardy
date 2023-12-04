@@ -2,39 +2,30 @@
 
 import { render, screen } from '@testing-library/react';
 import Home from './Home';
-import { useState } from 'react'
-import JeopardyContext from '../../JeopardyContext'
+import MockContextProvider from '../../helpers/MockContextProvider.js'
 
-const MockCtx = ({ children }) => {
-    const [isPlaying] = useState(false)
-    return (
-        <JeopardyContext.Provider value={isPlaying}>
-            {children}
-        </JeopardyContext.Provider>
-    )
-}
 
 test('does not crash', () => {
     render(
-        <MockCtx>
+        <MockContextProvider>
             <Home />
-        </MockCtx>);
+        </MockContextProvider>);
 });
 
 test('matches snapshot', () => {
     const home = render(
-        <MockCtx>
+        <MockContextProvider>
             <Home />
-        </MockCtx>);
+        </MockContextProvider>);
     expect(home.asFragment()).toMatchSnapshot();
 });
 
 describe('Component rendered test', () => {
     it('should render button', () => {
         render(
-            <MockCtx>
+            <MockContextProvider>
                 <Home />
-            </MockCtx>);
+            </MockContextProvider>);
         const btn = screen.getByText(/Play/i);
         expect(btn.textContent).toBe('Play');
         expect(btn.className).toBe('Play-btn btn')
@@ -42,9 +33,9 @@ describe('Component rendered test', () => {
 
     it('should render Title', () => {
         render(
-            <MockCtx>
+            <MockContextProvider>
                 <Home />
-            </MockCtx>);
+            </MockContextProvider>);
         const title = screen.getByText(/Jeopardy/i);
         expect(title.textContent).toBe('Jeopardy');
         expect(title.id).toBe('jeopardy-title');
