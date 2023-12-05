@@ -5,14 +5,16 @@ const Loading = () => {
   const ref = useRef()
 
   useAnimationFrame((time, delta) => {
-    if(!ref.current) return;
-    ref.current.style.transform = `rotate(${time/10}deg`
+    if (!ref.current) return;
+    ref.current.style.transform = `rotate(${time / 10}deg`
   })
 
   return (
-    <div 
+    <div
       ref={ref}
+      alt='Loading'
       className='Loading'>
+      <div style={{ display: 'hidden' }}>Loading</div>
     </div>
   )
 }
