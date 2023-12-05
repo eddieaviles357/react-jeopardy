@@ -15,8 +15,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: rgb(110,244,255);
-  background: radial-gradient(circle, rgba(110,244,255,1) 0%, rgba(9,32,121,0.8632046568627451) 49%, rgba(2,0,36,1) 100%);
+  background: rgb(110, 244, 255);
+  background: radial-gradient(circle, rgba(110, 244, 255, 1) 0%, rgba(9, 32, 121, 0.8632046568627451) 49%, rgba(2, 0, 36, 1) 100%);
 }
 
 .btn {
