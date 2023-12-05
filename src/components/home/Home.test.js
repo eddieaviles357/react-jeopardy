@@ -1,6 +1,6 @@
 "use strict";
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Home from './Home';
 import MockContextProvider from '../../helpers/MockContextProvider.js'
 
@@ -40,5 +40,17 @@ describe('Component rendered test', () => {
         expect(title.textContent).toBe('Jeopardy');
         expect(title.id).toBe('jeopardy-title');
     })
+})
 
+describe('Events Test', () => {
+    it('Should display Loading', () => {
+        const home = render(
+            <MockContextProvider>
+                <Home />
+            </MockContextProvider>);
+        const btn = screen.getByRole('button');
+        fireEvent.click(btn);
+        const loading = screen.getByText(/Loading/i);
+        expect(loading.textContent).toBe('Loading');
+    })
 })
