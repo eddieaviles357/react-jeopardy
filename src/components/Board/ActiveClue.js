@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './board.css'
+import { MOTION_CLUE_VARIANT } from "../../constants"
 import { motion } from 'framer-motion'
 
-const ActiveClue = ({ 
-  question, 
-  answer, 
+const ActiveClue = ({
+  question,
+  answer,
   isAnswered,
-  setIsAnswered, 
+  setIsAnswered,
   setIsShowing,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false)
@@ -14,53 +15,28 @@ const ActiveClue = ({
   const activeClueEventHandler = (evt) => {
     // avoid all other events
     evt.stopPropagation()
-    
+
     // extract id
     const id = evt.target.id
-    
-    if(id === 'go-back') { 
+
+    if (id === 'go-back') {
       // go back to board
       setIsShowing(false)
     }
-    if(id === 'reveal-answer') {
+    if (id === 'reveal-answer') {
       // reveals answer and stays indefinitely
       setIsRevealed(true)
       setIsAnswered(true)
     }
   }
-  
-  const clueVariant = {
-    hidden: { 
-      x: '-50%',
-      y: '-50%',
-      scale: 0,
-    },
-    show: {
-      x: '-50%',
-      y: '-50%',
-      scale: 1,
-      transition: {
-        duration: .5,
-        stiffness: 260,
-      }
-    },
-    leaving: {
-      x: '-50%',
-      y: '-50%',
-      scale: 0,
-      transition: {
-      duration: .5,
-      }
-    }
-  }
-  
+
   return (
     <motion.div
-      variants={clueVariant}
+      variants={MOTION_CLUE_VARIANT}
       initial='hidden'
-      animate='show' 
+      animate='show'
       exit='leaving'
-      className='Active' 
+      className='Active'
       onClick={activeClueEventHandler} >
       <div className='clue-choices-container'>
         <span id='go-back'>Go Back</span>
@@ -68,8 +44,8 @@ const ActiveClue = ({
       </div>
       <hr />
       <div className='Active-qa-container'>
-        <span className='Active-content'>{ question }</span>
-        <span className='Active-revealed'>{ (isRevealed || isAnswered) && answer }</span>
+        <span className='Active-content'>{question}</span>
+        <span className='Active-revealed'>{(isRevealed || isAnswered) && answer}</span>
       </div>
     </motion.div>
   )
