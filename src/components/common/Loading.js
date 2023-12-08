@@ -14,7 +14,8 @@ const Loading = () => {
       ref={ref}
       alt='Loading'
       className='Loading'>
-      <div style={{ display: 'hidden' }}>Loading</div>
+      {/*Used only for testing purpose*/}
+      <div style={{ display: 'none' }}>Loading</div>
     </div>
   )
 }
