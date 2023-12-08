@@ -26,4 +26,27 @@ export const MOTION_BTN_ATTR = {
     boxShadow: "10px 10px 4px rgba(0, 0, 0, 0.2)",
   }
 }
-
+export const MOTION_CLUE_VARIANT = {
+  hidden: {
+    x: '-50%',
+    y: '-50%',
+    scale: 0,
+  },
+  show: {
+    x: '-50%',
+    y: '-50%',
+    scale: 1,
+    transition: {
+      duration: .5,
+      stiffness: 260,
+    }
+  },
+  leaving: {
+    x: '-50%',
+    y: '-50%',
+    scale: 0,
+    transition: {
+      duration: .5,
+    }
+  }
+}
