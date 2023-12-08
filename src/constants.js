@@ -1,6 +1,7 @@
 export const NUM_CATEGORIES = 6;
 export const NUM_CLUES = 5;
 
+// api
 export const BASE_URL = 'http://jservice.io/api/';
 
 export const DEFAULT_CLUE = {
@@ -9,7 +10,9 @@ export const DEFAULT_CLUE = {
   value: 100,
   showing: null
 }
+// end api
 
+// Framer Motion specific
 export const MOTION_BTN_ATTR = {
   hover: {
     scale: 1.2,
@@ -50,3 +53,5 @@ export const MOTION_CLUE_VARIANT = {
     }
   }
 }
+
+// end Motion Framework specific
