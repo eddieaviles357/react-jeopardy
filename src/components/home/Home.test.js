@@ -43,7 +43,7 @@ describe('Component rendered test', () => {
 })
 
 describe('Events Test', () => {
-    it('Should display Loading', () => {
+    it('Should display Loading div element', () => {
         const home = render(
             <MockContextProvider>
                 <Home />
