@@ -28,8 +28,11 @@ const MockContextProvider = ({ children }) => {
             setJpardyData,
             isPlaying,
             setIsPlaying,
-            startGame,
             isLoading,
+            setIsLoading,
+            isPlayedBtnStarted,
+            setisPlayedBtnStarted,
+            startGame,
         }}>
             {children}
         </JeopardyContext.Provider>
