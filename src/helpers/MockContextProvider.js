@@ -3,12 +3,17 @@
 import { useState } from 'react'
 import JeopardyContext from '../JeopardyContext'
 
-const MockContextProvider = ({ children }) => {
-    const [jpardyData, setJpardyData] = useState([])
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
+const MockContextProvider = ({ children, initialProps = {
+    jpData: [],
+    playing: false,
+    loading: false,
+    started: false,
+} }) => {
+    const [jpardyData, setJpardyData] = useState(initialProps.jpData)
+    const [isPlaying, setIsPlaying] = useState(initialProps.playing)
+    const [isLoading, setIsLoading] = useState(initialProps.loading)
     // used to avoid multiple calls to api
-    const [isPlayedBtnStarted, setisPlayedBtnStarted] = useState(false)
+    const [isPlayedBtnStarted, setisPlayedBtnStarted] = useState(initialProps.started)
 
     const startGame = async () => {
         try {
