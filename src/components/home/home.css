@@ -20,28 +20,17 @@
 .Play-btn {
   width: 150px;
   height: 50px;
-  
+
   color: yellow;
   font-weight: 900;
   font-size: 20px;
 
   background-color: #4545f3;
-  
+
   transition: transform 100ms;
 
   border: solid 3px yellow;
 }
-
-/* @media only screen and (max-width: 1000px) {
-  .Play-btn {
-    transform: translate(-50%, 50%);
-  }
-}  */
-
-/* .Play-btn:hover {
-  background-color: #687bf8;
-  transform: scale(.95);
-} */
 
 .main-title {
   display: block;
@@ -53,6 +42,7 @@
 #title {
   margin: 2rem 0;
   width: 80vw;
+  filter: drop-shadow('13px 15px 6px rgb(0 0 0 / 0.4') !important;
 }
 
 .title-svg {
