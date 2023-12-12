@@ -1,14 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MOTION_TITLE_ATTR } from '../../constants'
+import { MOTION_TITLE_VARIANT } from '../../constants'
 import './home.css'
 
 const Title = () => {
 
   return (
     <motion.svg
-      initial={MOTION_TITLE_ATTR.hidden}
-      animate={MOTION_TITLE_ATTR.show}
+      initial={MOTION_TITLE_VARIANT.hidden}
+      animate={MOTION_TITLE_VARIANT.show}
       version="1.0"
       id="title"
       inkscapeversion="0.91 r13725"

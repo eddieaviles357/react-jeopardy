@@ -54,7 +54,7 @@ export const MOTION_CLUE_VARIANT = {
   }
 }
 
-export const MOTION_TITLE_ATTR = {
+export const MOTION_TITLE_VARIANT = {
   hidden: {
     x: 0,
     y: 0,
