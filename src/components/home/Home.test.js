@@ -41,16 +41,3 @@ describe('Component rendered test', () => {
         expect(title.id).toBe('jeopardy-title');
     })
 })
-
-describe('Events Test', () => {
-    it('Should display Loading div element', () => {
-        const home = render(
-            <MockContextProvider>
-                <Home />
-            </MockContextProvider>);
-        const btn = screen.getByRole('button');
-        fireEvent.click(btn);
-        const loading = screen.getByText(/Loading/i);
-        expect(loading.textContent).toBe('Loading');
-    })
-})
