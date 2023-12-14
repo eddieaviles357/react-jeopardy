@@ -7,6 +7,7 @@ function App() {
   const [jpardyData, setJpardyData] = useState([])
   const [isPlaying, setIsPlaying] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState({ isError: false, message: [] })
   // used to avoid multiple calls to api
   const [isPlayedBtnStarted, setisPlayedBtnStarted] = useState(false)
 
@@ -19,9 +20,12 @@ function App() {
       setIsPlaying(true)
       setIsLoading(false)
     } catch (err) {
-      return <div>Sorry something went wrong.Please Refresh</div>
+      // err is an array coming from our api
+      setError({ isError: true, message: err })
     }
   }
+
+  if (error.isError) return <div className='Error'>Something bad happened. Message: <em>{error.message}</em></div>
 
   return (
     <JeopardyContext.Provider value={{
