@@ -21,11 +21,19 @@ function App() {
       setIsLoading(false)
     } catch (err) {
       // err is an array coming from our api
-      setError({ isError: true, message: err })
+      setError({ isError: true, message: [...err, 'another one'] })
     }
   }
 
-  if (error.isError) return <div className='Error'>Something bad happened. Message: <em>{error.message}</em></div>
+  if (error.isError) return (
+    error.message.map((errMsg, idx) => (
+      <div
+        className='Error'
+        key={idx}>
+        Something bad happened. Message: <em>{errMsg}</em>
+      </div>
+    ))
+  )
 
   return (
     <JeopardyContext.Provider value={{
