@@ -4,7 +4,17 @@ import { useState } from 'react'
 import JeopardyContext from '../JeopardyContext'
 
 const MockContextProvider = ({ children, initialProps = {
-    jpData: [],
+    jpData: [{
+        title: 'Test title',
+        clues: [
+            {
+                question: 'What do you call a depressed coffee',
+                answer: 'depresso',
+                value: 100,
+                showing: null
+            }
+        ]
+    }],
     playing: false,
     loading: false,
     started: false,
