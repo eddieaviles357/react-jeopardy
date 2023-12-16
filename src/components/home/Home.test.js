@@ -1,6 +1,6 @@
 "use strict";
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Home from './Home';
 import MockContextProvider from '../../helpers/MockContextProvider.js'
 
@@ -40,4 +40,16 @@ describe('Component rendered test', () => {
         expect(title.textContent).toBe('Jeopardy');
         expect(title.id).toBe('jeopardy-title');
     })
+})
+
+describe('Should display Error', () => {
+    const testErrObj = { isError: true, message: ['Mock Error'] }
+    const home = render(
+        <MockContextProvider initialProps={{ err: testErrObj }} >
+            <Home />
+        </MockContextProvider >);
+
+    const errMsg = screen.getByText(/Message/i);
+    console.log('\nERRORRR::\n', errMsg.textContent)
+    expect(errMsg.textContent).toMatch(`Something bad happened. Message: ${testErrObj.message}`)
 })
