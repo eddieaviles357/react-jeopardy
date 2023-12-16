@@ -50,6 +50,5 @@ describe('Should display Error', () => {
         </MockContextProvider >);
 
     const errMsg = screen.getByText(/Message/i);
-    console.log('\nERRORRR::\n', errMsg.textContent)
     expect(errMsg.textContent).toMatch(`Something bad happened. Message: ${testErrObj.message}`)
 })
