@@ -28,7 +28,15 @@ const MockContextProvider = ({ children, initialProps = {
             setIsPlaying(true)
             setIsLoading(false)
         } catch (err) {
-            setError(prevError => ({ isError: true, message: [...prevError.message, Array.isArray(err) ? err : [err]] }))
+            setError(prevError => (
+                {
+                    isError: true,
+                    message: [
+                        ...prevError.message,
+                        Array.isArray(err) ? err : [err]
+                    ]
+                })
+            )
         }
     }
 
