@@ -8,14 +8,15 @@ const MockContextProvider = ({ children, initialProps = {
     playing: false,
     loading: false,
     started: false,
-    defaultError: false
+    err: {
+        isError: false,
+        message: []
+    }
 } }) => {
     const [jpardyData, setJpardyData] = useState(initialProps.jpData)
     const [isPlaying, setIsPlaying] = useState(initialProps.playing)
     const [isLoading, setIsLoading] = useState(initialProps.loading)
-    const [error, setError] = useState({
-        isError: initialProps.defaultError, message: ['Test error']
-    })
+    const [error, setError] = useState({ ...initialProps.err })
     // used to avoid multiple calls to api
     const [isPlayedBtnStarted, setisPlayedBtnStarted] = useState(initialProps.started)
 
@@ -32,8 +33,7 @@ const MockContextProvider = ({ children, initialProps = {
                 {
                     isError: true,
                     message: [
-                        ...prevError.message,
-                        Array.isArray(err) ? err : [err]
+                        ...prevError.message
                     ]
                 })
             )
