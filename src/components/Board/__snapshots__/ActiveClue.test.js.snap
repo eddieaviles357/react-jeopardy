@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Active"
+    style="transform: translateX(-50%) translateY(-50%) scale(0) translateZ(0);"
+  >
+    <div
+      class="clue-choices-container"
+    >
+      <span
+        id="go-back"
+      >
+        Go Back
+      </span>
+      <span
+        id="reveal-answer"
+      >
+        Reveal Answer
+      </span>
+    </div>
+    <hr />
+    <div
+      class="Active-qa-container"
+    >
+      <span
+        class="Active-content"
+      />
+      <span
+        class="Active-revealed"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
