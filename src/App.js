@@ -21,7 +21,7 @@ function App() {
       setIsLoading(false)
     } catch (err) {
       // err is an array coming from our api
-      setError({ isError: true, message: [...err, 'another one'] })
+      setError({ isError: true, message: [...err] })
     }
   }
 
